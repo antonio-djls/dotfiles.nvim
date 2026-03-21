@@ -1,11 +1,7 @@
-local ls = require("luasnip")
-local s = ls.snippet
-local t = ls.text_node
-local i = ls.insert_node
-
-ls.add_snippets("cpp", {
-  s("comp", {
-    t({
+{
+  "Competitive Programming Template": {
+    "prefix": "comp",
+    "body": [
       "#include <bits/stdc++.h>",
       "#define ll long long",
       "#define f first",
@@ -15,13 +11,10 @@ ls.add_snippets("cpp", {
       "int main() {",
       "  ios::sync_with_stdio(false);",
       "  cin.tie(nullptr);",
-      "  ",
-    }),
-    i(1),
-    t({
-      "",
+      "  $0",
       "  return 0;",
-      "}",
-    }),
-  }),
-})
+      "}"
+    ],
+    "description": "Competitive programming C++ template"
+  }
+}

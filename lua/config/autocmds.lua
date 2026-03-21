@@ -6,3 +6,12 @@
 --
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
+
+-- Auto-reload files modified externally (e.g. by AI tools) every 300ms
+vim.o.autoread = true
+local timer = vim.uv.new_timer()
+timer:start(300, 300, vim.schedule_wrap(function()
+  if vim.fn.getcmdwintype() == "" and vim.fn.mode() ~= "c" then
+    vim.cmd("silent! checktime")
+  end
+end))
