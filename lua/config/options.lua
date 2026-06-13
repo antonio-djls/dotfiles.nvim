@@ -6,3 +6,4 @@
 vim.g.autoformat = false
 vim.g.lazyvim_mini_snippets_in_completion = true
 vim.o.autoread = true
+vim.opt.swapfile = false
